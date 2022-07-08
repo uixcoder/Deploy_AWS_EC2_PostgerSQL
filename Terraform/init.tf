@@ -3,15 +3,15 @@ provider "aws" {
 }
 
 
-# terraform {
-#   backend "s3" {
-#     bucket         = "pet-clinic-project"
-#     key            = "pet-clinic-tf.tfstate"
-#     encrypt        = true
-#     dynamodb_table = "petclinic-tf-lock"
-#   }
+terraform {
+  backend "s3" {
+    bucket         = "pet-clinic-project"
+    key            = "pet-clinic-tf.tfstate"
+    encrypt        = true
+    dynamodb_table = "petclinic-tf-lock"
+  }
 
-# }
+}
 
 
 
