@@ -43,7 +43,7 @@ resource "aws_instance" "DB_PetClinic_TF" {
 }
 
 resource "aws_security_group" "sg_app" {
-  name = "sg_app"
+  name = "sg_app_pet"
   ingress {
     from_port   = "80"
     to_port     = "80"
@@ -68,7 +68,7 @@ resource "aws_security_group" "sg_app" {
   }
 }
 resource "aws_security_group" "sg_db" {
-  name = "sg_db"
+  name = "sg_db_pet"
   ingress {
     from_port   = "5432"
     to_port     = "5432"
