@@ -96,11 +96,12 @@
 
     - name: Copy bin node_exporter to /usr/local/bin
       copy:
+        force: yes
         src: /tmp/node_exporter-0.18.1.linux-amd64/node_exporter
         dest: /usr/local/bin/
         owner: node_exporter
         group: node_exporter
-        mode: u+x,g+x,o+x    
+        mode: u+x,g+x,o+x   
 
     - name: Create service node_exporter.service
       blockinfile:
