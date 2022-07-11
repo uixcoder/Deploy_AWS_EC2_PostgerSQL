@@ -26,7 +26,7 @@ pipeline {
             steps {
               sh script: '''
                     chdir Deploy/Terraform
-                    terraform init -force-copy
+                    terraform init -reconfigure
                     terraform apply --auto-approve
               ''' 
             }
