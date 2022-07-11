@@ -16,6 +16,12 @@ resource "aws_instance" "DB_PetClinic_TF" {
 resource "aws_security_group" "sg_db" {
   name = "sg_db_pet"
   ingress {
+    from_port   = "9100"
+    to_port     = "9100"
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }   
+  ingress {
     from_port   = "5432"
     to_port     = "5432"
     protocol    = "tcp"
@@ -37,4 +43,12 @@ resource "aws_security_group" "sg_db" {
   tags = {
     Name = "DB_TF"
   }
+}
+
+resource "aws_route53_record" "dbpet1" {
+  zone_id = "Z0118956EU069IAZHTCP"
+  name    = "db1.xcoder.pp.ua"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.DB_PetClinic_TF.public_ip]
 }
