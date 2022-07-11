@@ -78,4 +78,9 @@
   #   apt:
   #     name: maven
   #     state: present
+
+  - name: Install Node Exporter
+    apt:
+      name: prometheus-node-exporter
+      state: present
   

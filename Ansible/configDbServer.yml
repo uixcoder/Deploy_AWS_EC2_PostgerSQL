@@ -1,7 +1,7 @@
 ---
 - name: Configure Db Server
   hosts: db_server
-  become: yes
+  become: true
   become_method: sudo
   remote_user: ec2-user
   vars:
