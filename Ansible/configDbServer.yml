@@ -91,13 +91,13 @@
     - name: Download and extract 
       unarchive:
         src: https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
-        dest: /tmp
+        dest: tmp
         remote_src: yes
 
     - name: Copy bin node_exporter to /usr/local/bin
       copy:
         force: yes
-        src: /tmp/node_exporter-0.18.1.linux-amd64/node_exporter
+        src: tmp/node_exporter-0.18.1.linux-amd64/node_exporter
         dest: /usr/local/bin/
         owner: node_exporter
         group: node_exporter
