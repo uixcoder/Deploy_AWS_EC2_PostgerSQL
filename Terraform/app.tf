@@ -20,7 +20,7 @@ resource "aws_security_group" "sg_app" {
     to_port     = "9100"
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }  
+  }
   ingress {
     from_port   = "80"
     to_port     = "80"
@@ -45,7 +45,7 @@ resource "aws_security_group" "sg_app" {
   }
 }
 
-resource "aws_route53_record" "pet" {
+resource "aws_route53_record" "apppet1" {
   zone_id = "Z0118956EU069IAZHTCP"
   name    = "pet1.xcoder.pp.ua"
   type    = "A"
